@@ -401,26 +401,26 @@ export function RadioTunerPricing({
   const shown = tuned;
 
   return (
-    <section style={style} className={`rtp w-full ${className}`} aria-labelledby={title ? `${uid}-title` : undefined}>
+    <section style={style} className={`rtp @container w-full ${className}`} aria-labelledby={title ? `${uid}-title` : undefined}>
       {(title || subtitle) && (
-        <header className="mx-auto mb-8 max-w-2xl text-center sm:mb-10">
+        <header className="mx-auto mb-8 max-w-2xl text-center @xl:mb-10">
           {title && (
-            <h2 id={`${uid}-title`} className="text-3xl font-semibold tracking-tight text-[var(--rtp-body)] sm:text-4xl">
+            <h2 id={`${uid}-title`} className="text-3xl font-semibold tracking-tight text-[var(--rtp-body)] @xl:text-4xl">
               {title}
             </h2>
           )}
-          {subtitle && <p className="mt-3 text-base text-[#5d5275] sm:text-lg">{subtitle}</p>}
+          {subtitle && <p className="mt-3 text-base text-[#5d5275] @xl:text-lg">{subtitle}</p>}
         </header>
       )}
 
       {/* Cabinet */}
       <div className="relative mx-auto max-w-4xl">
         {/* carry handle */}
-        <div aria-hidden="true" className="mx-auto h-5 w-40 rounded-t-2xl border-[5px] border-b-0 border-[var(--rtp-brass)]/80 sm:w-56" />
-        <div className="rounded-[28px] bg-[linear-gradient(160deg,color-mix(in_srgb,var(--rtp-body)_85%,white),var(--rtp-body)_45%,color-mix(in_srgb,var(--rtp-body)_70%,black))] p-2.5 shadow-[0_30px_60px_-25px_rgba(30,8,60,.65)] ring-1 ring-black/20 sm:p-3.5">
-          <div className="grid gap-4 rounded-[22px] bg-[var(--rtp-inner)] p-4 shadow-[inset_0_2px_10px_rgba(0,0,0,.5)] sm:p-6 md:grid-cols-[140px_1fr_168px] md:gap-6">
+        <div aria-hidden="true" className="mx-auto h-5 w-40 rounded-t-2xl border-[5px] border-b-0 border-[var(--rtp-brass)]/80 @xl:w-56" />
+        <div className="rounded-[28px] bg-[linear-gradient(160deg,color-mix(in_srgb,var(--rtp-body)_85%,white),var(--rtp-body)_45%,color-mix(in_srgb,var(--rtp-body)_70%,black))] p-2.5 shadow-[0_30px_60px_-25px_rgba(30,8,60,.65)] ring-1 ring-black/20 @xl:p-3.5">
+          <div className="grid gap-4 rounded-[22px] bg-[var(--rtp-inner)] p-4 shadow-[inset_0_2px_10px_rgba(0,0,0,.5)] @xl:p-6 @3xl:grid-cols-[140px_1fr_168px] @3xl:gap-6">
             {/* Speaker */}
-            <div aria-hidden="true" className="hidden flex-col items-center justify-between gap-4 md:flex">
+            <div aria-hidden="true" className="hidden flex-col items-center justify-between gap-4 @3xl:flex">
               <div
                 className={`w-full flex-1 rounded-2xl border-4 border-[var(--rtp-brass)]/60 bg-[radial-gradient(circle,rgba(0,0,0,.55)_1.6px,transparent_2px)] bg-[length:9px_9px] ${
                   locked && !reduced ? "rtp-thump" : ""
@@ -442,7 +442,7 @@ export function RadioTunerPricing({
                 onPointerUp={endDrag}
                 onPointerCancel={endDrag}
                 aria-hidden="true"
-                className={`relative h-20 touch-none overflow-hidden rounded-xl border-2 border-[var(--rtp-brass)]/70 select-none sm:h-24 ${
+                className={`relative h-20 touch-none overflow-hidden rounded-xl border-2 border-[var(--rtp-brass)]/70 select-none @xl:h-24 ${
                   dragging === "dial" ? "cursor-grabbing" : "cursor-pointer"
                 }`}
                 style={{
@@ -456,7 +456,7 @@ export function RadioTunerPricing({
                   return (
                     <span
                       key={s.id}
-                      className="absolute top-2 -translate-x-1/2 text-[10px] font-bold tracking-[0.18em] whitespace-nowrap uppercase transition-[color,text-shadow] sm:top-2.5 sm:text-xs"
+                      className="absolute top-2 -translate-x-1/2 text-[10px] font-bold tracking-[0.18em] whitespace-nowrap uppercase transition-[color,text-shadow] @xl:top-2.5 @xl:text-xs"
                       style={{
                         left: `${x}%`,
                         color: on ? "#fff6e0" : "rgba(255,230,190,.55)",
@@ -472,7 +472,7 @@ export function RadioTunerPricing({
                 {ticks.map(({ f, major }) => (
                   <span
                     key={f}
-                    className="absolute bottom-5 w-px -translate-x-1/2 bg-[#ffe7c2]/60 sm:bottom-6"
+                    className="absolute bottom-5 w-px -translate-x-1/2 bg-[#ffe7c2]/60 @xl:bottom-6"
                     style={{ left: `${toPct(f)}%`, height: major ? 14 : 7 }}
                   />
                 ))}
@@ -481,7 +481,7 @@ export function RadioTunerPricing({
                   .map(({ f }) => (
                     <span
                       key={`n${f}`}
-                      className="absolute bottom-1 -translate-x-1/2 font-mono text-[9px] text-[#ffe7c2]/70 sm:bottom-1.5 sm:text-[10px]"
+                      className="absolute bottom-1 -translate-x-1/2 font-mono text-[9px] text-[#ffe7c2]/70 @xl:bottom-1.5 @xl:text-[10px]"
                       style={{ left: `${toPct(f)}%` }}
                     >
                       {f}
@@ -498,7 +498,7 @@ export function RadioTunerPricing({
 
               {/* Screen */}
               <div
-                className="relative flex min-h-[400px] flex-col overflow-hidden rounded-xl border border-black/40 bg-[var(--rtp-screen)] p-5 shadow-[inset_0_0_30px_rgba(0,0,0,.8)] sm:min-h-[350px] sm:p-6"
+                className="relative flex min-h-[400px] flex-col overflow-hidden rounded-xl border border-black/40 bg-[var(--rtp-screen)] p-5 shadow-[inset_0_0_30px_rgba(0,0,0,.8)] @xl:min-h-[350px] @xl:p-6"
               >
                 {/* readout row */}
                 <div className="flex items-center justify-between gap-3 font-mono text-xs tracking-[0.2em] text-[var(--rtp-glow)] uppercase [text-shadow:0_0_8px_var(--rtp-glow)]">
@@ -522,7 +522,7 @@ export function RadioTunerPricing({
                     style={{ filter: locked ? "none" : `blur(${((1 - clarity) * 5).toFixed(2)}px)`, opacity: 0.35 + 0.65 * clarity }}
                   >
                     <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="text-2xl font-semibold text-white sm:text-3xl">{shown.name}</h3>
+                      <h3 className="text-2xl font-semibold text-white @xl:text-3xl">{shown.name}</h3>
                       {shown.featured && (
                         <span className="rounded-full bg-[var(--rtp-glow)]/15 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-[var(--rtp-glow)] uppercase ring-1 ring-[var(--rtp-glow)]/40">
                           Most popular
@@ -534,7 +534,7 @@ export function RadioTunerPricing({
                     </div>
                     {shown.tagline && <p className="mt-1 text-sm text-white/65">{shown.tagline}</p>}
                     <p className="mt-4 flex items-baseline gap-2 text-white">
-                      <span className="text-4xl font-bold tracking-tight sm:text-5xl">{priceText(shown).main}</span>
+                      <span className="text-4xl font-bold tracking-tight @xl:text-5xl">{priceText(shown).main}</span>
                       <span className="text-sm text-white/60">{priceText(shown).per}</span>
                       {billing === "yearly" && shown.price.monthly > 0 && (
                         <span className="text-xs text-[var(--rtp-glow)]">
@@ -543,7 +543,7 @@ export function RadioTunerPricing({
                         </span>
                       )}
                     </p>
-                    <ul className="mt-4 grid gap-2 text-sm text-white/85 sm:grid-cols-2">
+                    <ul className="mt-4 grid gap-2 text-sm text-white/85 @xl:grid-cols-2">
                       {shown.features.map((f) => (
                         <li key={f} className="flex gap-2">
                           <svg viewBox="0 0 20 20" className="mt-0.5 size-4 shrink-0 text-[var(--rtp-glow)]" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
@@ -567,7 +567,7 @@ export function RadioTunerPricing({
                     onClick={choose}
                     disabled={!locked || !!shown?.disabled}
                     aria-busy={status === "pending" || undefined}
-                    className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-[var(--rtp-glow)] px-6 py-3 text-sm font-bold text-[#2a1404] shadow-[0_0_24px_-4px_var(--rtp-glow)] transition hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--rtp-glow)] active:translate-y-0 active:brightness-95 aria-busy:cursor-wait aria-busy:hover:translate-y-0 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/45 disabled:shadow-none disabled:hover:translate-y-0 sm:w-auto sm:text-base"
+                    className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-[var(--rtp-glow)] px-6 py-3 text-sm font-bold text-[#2a1404] shadow-[0_0_24px_-4px_var(--rtp-glow)] transition hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--rtp-glow)] active:translate-y-0 active:brightness-95 aria-busy:cursor-wait aria-busy:hover:translate-y-0 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/45 disabled:shadow-none disabled:hover:translate-y-0 @xl:w-auto @xl:text-base"
                   >
                     {status === "pending" ? (
                       <>
@@ -604,7 +604,7 @@ export function RadioTunerPricing({
             </div>
 
             {/* Controls */}
-            <div className="flex flex-row flex-wrap items-center justify-center gap-5 md:flex-col md:justify-start">
+            <div className="flex flex-row flex-wrap items-center justify-center gap-5 @3xl:flex-col @3xl:justify-start">
               <div className="flex flex-col items-center gap-2">
                 <div
                   ref={knobRef}
@@ -622,7 +622,7 @@ export function RadioTunerPricing({
                   onPointerCancel={endDrag}
                   onKeyDown={onKnobKey}
                   onKeyUp={onKnobKeyUp}
-                  className={`relative size-28 touch-none rounded-full bg-[radial-gradient(circle_at_35%_30%,#fff3d6,var(--rtp-brass)_45%,color-mix(in_srgb,var(--rtp-brass)_55%,black))] p-2 shadow-[0_8px_18px_rgba(0,0,0,.45)] transition-shadow outline-none select-none focus-visible:ring-4 focus-visible:ring-[var(--rtp-glow)]/70 sm:size-32 ${
+                  className={`relative size-28 touch-none rounded-full bg-[radial-gradient(circle_at_35%_30%,#fff3d6,var(--rtp-brass)_45%,color-mix(in_srgb,var(--rtp-brass)_55%,black))] p-2 shadow-[0_8px_18px_rgba(0,0,0,.45)] transition-shadow outline-none select-none focus-visible:ring-4 focus-visible:ring-[var(--rtp-glow)]/70 @xl:size-32 ${
                     dragging === "knob" ? "cursor-grabbing" : "cursor-grab hover:shadow-[0_10px_24px_rgba(0,0,0,.55)]"
                   }`}
                 >

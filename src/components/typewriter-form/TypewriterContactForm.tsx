@@ -176,7 +176,7 @@ function TypedField({
   };
 
   return (
-    <div className="tw-field relative grid gap-1 sm:grid-cols-[7.5rem_1fr] sm:items-baseline sm:gap-3">
+    <div className="tw-field relative grid gap-1 @xl:grid-cols-[7.5rem_1fr] @xl:items-baseline @xl:gap-3">
       <label htmlFor={id} className="text-sm tracking-wider text-[var(--tw-ink)]/70 uppercase">
         {label}:
       </label>
@@ -447,15 +447,15 @@ export function TypewriterContactForm({
   );
 
   return (
-    <section style={style} className={`tw w-full ${className}`}>
+    <section style={style} className={`tw @container w-full ${className}`}>
       <form onSubmit={submit} noValidate aria-label={`Write a letter to ${recipient}`} className="relative mx-auto max-w-2xl" onKeyDown={(e) => {
         if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) e.currentTarget.requestSubmit();
       }}>
         {/* ---------- Paper ---------- */}
-        <div className="relative z-10 mx-auto w-[90%] sm:w-[84%]" style={{ perspective: "900px" }}>
+        <div className="relative z-10 mx-auto w-[90%] @xl:w-[84%]" style={{ perspective: "900px" }}>
           {phase !== "done" ? (
             <div
-              className="relative origin-bottom rounded-t-sm bg-[var(--tw-paper)] px-5 pt-7 pb-14 shadow-[0_-4px_20px_rgba(40,20,60,.12)] transition-[transform,opacity] ease-in-out sm:px-9 sm:pt-9"
+              className="relative origin-bottom rounded-t-sm bg-[var(--tw-paper)] px-5 pt-7 pb-14 shadow-[0_-4px_20px_rgba(40,20,60,.12)] transition-[transform,opacity] ease-in-out @xl:px-9 @xl:pt-9"
               style={{
                 transform: paperTransform,
                 opacity: phase === "folding" || phase === "flying" ? 0 : 1,
@@ -534,7 +534,7 @@ export function TypewriterContactForm({
           ) : (
             <div
               role="status"
-              className="tw-rise relative rounded-t-sm bg-[var(--tw-paper)] px-6 pt-10 pb-16 text-center shadow-[0_-4px_20px_rgba(40,20,60,.12)] sm:px-10"
+              className="tw-rise relative rounded-t-sm bg-[var(--tw-paper)] px-6 pt-10 pb-16 text-center shadow-[0_-4px_20px_rgba(40,20,60,.12)] @xl:px-10"
               style={{ fontFamily: "var(--tw-font)" }}
             >
               <svg viewBox="0 0 64 48" className="mx-auto h-12 w-16 text-[var(--tw-body)]" aria-hidden="true">
@@ -557,7 +557,7 @@ export function TypewriterContactForm({
           {(phase === "folding" || phase === "flying") && (
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-[22%] z-30 mx-auto w-40 transition-[transform,opacity] duration-700 ease-in sm:w-48"
+              className="pointer-events-none absolute inset-x-0 top-[22%] z-30 mx-auto w-40 transition-[transform,opacity] duration-700 ease-in @xl:w-48"
               style={{
                 transform: phase === "flying" ? "translate(170%, -190%) rotate(16deg) scale(.45)" : "translate(0,0)",
                 opacity: phase === "flying" ? 0 : 1,
@@ -577,7 +577,7 @@ export function TypewriterContactForm({
         </div>
 
         {/* ---------- Machine ---------- */}
-        <div className="relative z-20 -mt-10 rounded-t-[22px] rounded-b-[34px] bg-[linear-gradient(170deg,color-mix(in_srgb,var(--tw-body)_75%,white),var(--tw-body)_40%,color-mix(in_srgb,var(--tw-body)_65%,black))] px-4 pt-9 pb-5 shadow-[0_30px_50px_-20px_rgba(30,8,60,.6)] sm:px-8 sm:pb-7">
+        <div className="relative z-20 -mt-10 rounded-t-[22px] rounded-b-[34px] bg-[linear-gradient(170deg,color-mix(in_srgb,var(--tw-body)_75%,white),var(--tw-body)_40%,color-mix(in_srgb,var(--tw-body)_65%,black))] px-4 pt-9 pb-5 shadow-[0_30px_50px_-20px_rgba(30,8,60,.6)] @xl:px-8 @xl:pb-7">
           {/* roller */}
           <div aria-hidden="true" className="absolute -top-4 right-[-10px] left-[-10px] flex items-center">
             <span className="size-9 shrink-0 rounded-full bg-[radial-gradient(circle_at_35%_30%,#fff,#b9b4c4_45%,#4a4458)] shadow-md" />
@@ -604,7 +604,7 @@ export function TypewriterContactForm({
           </div>
 
           {/* keys */}
-          <div className="hidden flex-col items-center gap-1.5 sm:flex">
+          <div className="hidden flex-col items-center gap-1.5 @xl:flex">
             {KEY_ROWS.map((row, r) => (
               <div key={row} className="flex gap-1.5" style={{ paddingLeft: r * 14 }}>
                 {Array.from(row).map((k) => key(k, "size-8"))}
@@ -625,12 +625,12 @@ export function TypewriterContactForm({
                 {sound ? <path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" /> : <path d="m17 9 5 6m0-6-5 6" />}
               </svg>
             </button>
-            {key("SPACE", "hidden h-8 flex-1 rounded-lg sm:flex", "")}
+            {key("SPACE", "hidden h-8 flex-1 rounded-lg @xl:flex", "")}
             <button
               type="submit"
               disabled={phase !== "form"}
               aria-busy={status === "sending" || undefined}
-              className={`relative ml-auto inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border-b-4 px-5 text-sm font-bold tracking-[0.15em] text-white uppercase shadow-[0_3px_0_rgba(0,0,0,.35)] transition-[transform,filter,border] duration-75 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--tw-keys)] active:translate-y-[3px] active:border-b-0 disabled:cursor-not-allowed disabled:opacity-60 aria-busy:cursor-wait max-sm:flex-1 sm:px-6 ${
+              className={`relative ml-auto inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border-b-4 px-5 text-sm font-bold tracking-[0.15em] text-white uppercase shadow-[0_3px_0_rgba(0,0,0,.35)] transition-[transform,filter,border] duration-75 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--tw-keys)] active:translate-y-[3px] active:border-b-0 disabled:cursor-not-allowed disabled:opacity-60 aria-busy:cursor-wait @max-xl:flex-1 @xl:px-6 ${
                 pressed === "RETURN" ? "translate-y-[3px] border-b-0" : "border-black/35"
               }`}
               style={{ background: "var(--tw-stamp)", fontFamily: "var(--tw-font)" }}

@@ -390,7 +390,7 @@ export function CatRevealHero({
       {eyebrow && (
         <p
           data-crh-copy
-          className={`mb-4 rounded-full border border-[color-mix(in_srgb,var(--crh-brand)_25%,transparent)] px-3 py-1 text-xs font-semibold tracking-[0.2em] text-[var(--crh-brand)] uppercase sm:mb-6 sm:text-sm ${fadeCls(copyVisible)}`}
+          className={`mb-4 rounded-full border border-[color-mix(in_srgb,var(--crh-brand)_25%,transparent)] px-3 py-1 text-xs font-semibold tracking-[0.2em] text-[var(--crh-brand)] uppercase @xl:mb-6 @xl:text-sm ${fadeCls(copyVisible)}`}
         >
           {eyebrow}
         </p>
@@ -438,7 +438,7 @@ export function CatRevealHero({
       {tagline && (
         <p
           data-crh-copy
-          className={`mt-5 max-w-2xl text-center text-base leading-relaxed text-balance text-[var(--crh-text)] sm:mt-7 sm:text-lg md:text-xl ${fadeCls(copyVisible, "delay-100")}`}
+          className={`mt-5 max-w-2xl text-center text-base leading-relaxed text-balance text-[var(--crh-text)] @xl:mt-7 @xl:text-lg @3xl:text-xl ${fadeCls(copyVisible, "delay-100")}`}
         >
           {tagline}
         </p>
@@ -448,7 +448,7 @@ export function CatRevealHero({
         <div
           data-crh-copy
           aria-hidden={!copyVisible || undefined}
-          className={`mt-8 flex w-full max-w-sm flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:justify-center ${fadeCls(copyVisible, "delay-200")} ${copyVisible ? "" : "pointer-events-none"}`}
+          className={`mt-8 flex w-full max-w-sm flex-col gap-3 @xl:w-auto @xl:max-w-none @xl:flex-row @xl:justify-center ${fadeCls(copyVisible, "delay-200")} ${copyVisible ? "" : "pointer-events-none"}`}
         >
           {primaryAction && (
             <a
@@ -456,7 +456,7 @@ export function CatRevealHero({
               aria-label={primaryAction.ariaLabel}
               onClick={primaryAction.onClick}
               tabIndex={copyVisible ? undefined : -1}
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[var(--crh-brand)] px-6 py-3 text-sm font-semibold text-[var(--crh-on-brand)] shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:brightness-125 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--crh-brand)] active:translate-y-0 active:brightness-95 sm:text-base"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[var(--crh-brand)] px-6 py-3 text-sm font-semibold text-[var(--crh-on-brand)] shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:brightness-125 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--crh-brand)] active:translate-y-0 active:brightness-95 @xl:text-base"
             >
               {primaryAction.label}
             </a>
@@ -467,7 +467,7 @@ export function CatRevealHero({
               aria-label={secondaryAction.ariaLabel}
               onClick={secondaryAction.onClick}
               tabIndex={copyVisible ? undefined : -1}
-              className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-[var(--crh-brand)] px-6 py-3 text-sm font-semibold text-[var(--crh-brand)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--crh-brand)_8%,transparent)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--crh-brand)] active:translate-y-0 active:bg-[color-mix(in_srgb,var(--crh-brand)_14%,transparent)] sm:text-base"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-[var(--crh-brand)] px-6 py-3 text-sm font-semibold text-[var(--crh-brand)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--crh-brand)_8%,transparent)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--crh-brand)] active:translate-y-0 active:bg-[color-mix(in_srgb,var(--crh-brand)_14%,transparent)] @xl:text-base"
             >
               {secondaryAction.label}
             </a>
@@ -525,7 +525,7 @@ export function CatRevealHero({
           disabled={status !== "done"}
           aria-label="Replay animation"
           title="Replay animation"
-          className="absolute right-3 bottom-3 inline-flex size-11 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--crh-brand)_30%,transparent)] bg-[var(--crh-bg)] text-[var(--crh-brand)] shadow-sm transition hover:-rotate-45 hover:bg-[color-mix(in_srgb,var(--crh-brand)_8%,var(--crh-bg))] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--crh-brand)] active:scale-90 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:rotate-0 sm:right-5 sm:bottom-5"
+          className="absolute right-3 bottom-3 inline-flex size-11 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--crh-brand)_30%,transparent)] bg-[var(--crh-bg)] text-[var(--crh-brand)] shadow-sm transition hover:-rotate-45 hover:bg-[color-mix(in_srgb,var(--crh-brand)_8%,var(--crh-bg))] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--crh-brand)] active:scale-90 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:rotate-0 @xl:right-5 @xl:bottom-5"
         >
           {status === "playing" || status === "preparing" ? (
             <svg viewBox="0 0 24 24" className="size-5 animate-spin motion-reduce:animate-none" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden>

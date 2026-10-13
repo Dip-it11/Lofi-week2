@@ -296,7 +296,7 @@ export function VinylCard({
       style={style}
       aria-label={`${title} by ${artist}`}
       data-state={disabled ? "disabled" : loading ? "loading" : playing ? "playing" : "idle"}
-      className={`group/vc relative w-full max-w-sm rounded-3xl border p-4 transition-shadow duration-300 sm:p-5 ${
+      className={`group/vc @container relative w-full max-w-sm rounded-3xl border p-4 transition-shadow duration-300 sm:p-5 ${
         dark ? "border-white/10 bg-[#140b24] text-white" : "border-[#e6e0f2] bg-white text-[#1d1430]"
       } ${disabled ? "opacity-60" : "hover:shadow-xl"} ${playing ? "shadow-xl" : "shadow-sm"} ${className}`}
     >
@@ -339,7 +339,7 @@ export function VinylCard({
           )}
           {/* Record-shop sticker */}
           {badge && (
-            <span className="absolute right-[6%] bottom-[6%] -rotate-6 rounded-md bg-[#fff6d6] px-2 py-1 text-[10px] leading-none font-bold tracking-wide text-[#3a2a12] uppercase shadow-[0_2px_6px_rgba(0,0,0,.25)] sm:text-[11px]">
+            <span className="absolute right-[6%] bottom-[6%] -rotate-6 rounded-md bg-[#fff6d6] px-2 py-1 text-[10px] leading-none font-bold tracking-wide text-[#3a2a12] uppercase shadow-[0_2px_6px_rgba(0,0,0,.25)] @xs:text-[11px]">
               {badge}
             </span>
           )}
